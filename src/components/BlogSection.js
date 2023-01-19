@@ -39,7 +39,7 @@ const BlogSection = ({
             {excerpt(description, 120)}
           </div>
           <Link to={`/detail/${id}`}>
-            <button className="btn btn-read">Read More</button>
+            <button className="btn btn-read">Leer más</button>
           </Link>
           {user && user.uid === userId && (
             <div style={{ float: "right" }}>

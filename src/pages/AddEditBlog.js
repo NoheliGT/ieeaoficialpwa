@@ -25,12 +25,11 @@ const initialState = {
 };
 
 const categoryOption = [
-  "Fashion",
-  "Technology",
-  "Food",
-  "Politics",
-  "Sports",
-  "Business",
+  "Educación",
+  "Eventos",
+  "Primaria",
+  "Secundaria",
+  "Trabajo",
 ];
 
 const AddEditBlog = ({ user, setActive }) => {
@@ -71,7 +70,7 @@ const AddEditBlog = ({ user, setActive }) => {
         },
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then((downloadUrl) => {
-            toast.info("Image upload to firebase successfully");
+            toast.info("¡Imagen cargada correctamente!");
             setForm((prev) => ({ ...prev, imgUrl: downloadUrl }));
           });
         }
@@ -122,7 +121,7 @@ const AddEditBlog = ({ user, setActive }) => {
             author: user.displayName,
             userId: user.uid,
           });
-          toast.success("Blog created successfully");
+          toast.success("¡Nueva publicación creada!");
         } catch (err) {
           console.log(err);
         }
@@ -134,7 +133,7 @@ const AddEditBlog = ({ user, setActive }) => {
             author: user.displayName,
             userId: user.uid,
           });
-          toast.success("Blog updated successfully");
+          toast.success("¡Publicación actualizada!");
         } catch (err) {
           console.log(err);
         }
@@ -151,7 +150,7 @@ const AddEditBlog = ({ user, setActive }) => {
       <div className="container">
         <div className="col-12">
           <div className="text-center heading py-2">
-            {id ? "Update Blog" : "Create Blog"}
+            {id ? "Actualizar publicación" : "Nueva publicación"}
           </div>
         </div>
         <div className="row h-100 justify-content-center align-items-center">
@@ -161,7 +160,7 @@ const AddEditBlog = ({ user, setActive }) => {
                 <input
                   type="text"
                   className="form-control input-text-box"
-                  placeholder="Title"
+                  placeholder="Título"
                   name="title"
                   value={title}
                   onChange={handleChange}
@@ -170,12 +169,12 @@ const AddEditBlog = ({ user, setActive }) => {
               <div className="col-12 py-3">
                 <ReactTagInput
                   tags={tags}
-                  placeholder="Tags"
+                  placeholder="Etiquetas"
                   onChange={handleTags}
                 />
               </div>
               <div className="col-12 py-3">
-                <p className="trending">Is it trending blog ?</p>
+                <p className="trending">¿Será una publicación destacada?</p>
                 <div className="form-check-inline mx-2">
                   <input
                     type="radio"
@@ -186,7 +185,7 @@ const AddEditBlog = ({ user, setActive }) => {
                     onChange={handleTrending}
                   />
                   <label htmlFor="radioOption" className="form-check-label">
-                    Yes&nbsp;
+                    Si&nbsp;
                   </label>
                   <input
                     type="radio"
@@ -207,7 +206,7 @@ const AddEditBlog = ({ user, setActive }) => {
                   onChange={onCategoryChange}
                   className="catg-dropdown"
                 >
-                  <option>Please select category</option>
+                  <option>Porfavor selecciona una categoría</option>
                   {categoryOption.map((option, index) => (
                     <option value={option || ""} key={index}>
                       {option}
@@ -218,7 +217,7 @@ const AddEditBlog = ({ user, setActive }) => {
               <div className="col-12 py-3">
                 <textarea
                   className="form-control description-box"
-                  placeholder="Description"
+                  placeholder="Descripción completa"
                   value={description}
                   name="description"
                   onChange={handleChange}
@@ -237,7 +236,7 @@ const AddEditBlog = ({ user, setActive }) => {
                   type="submit"
                   disabled={progress !== null && progress < 100}
                 >
-                  {id ? "Update" : "Submit"}
+                  {id ? "Actualizar" : "Crear"}
                 </button>
               </div>
             </form>

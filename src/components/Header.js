@@ -33,7 +33,7 @@ const Header = ({ active, setActive, user, handleLogout }) => {
                     }`}
                     onClick={() => setActive("home")}
                   >
-                    Home
+                    Inicio
                   </li>
                 </Link>
                 <Link to="/blogs" style={{ textDecoration: "none" }}>
@@ -43,7 +43,7 @@ const Header = ({ active, setActive, user, handleLogout }) => {
                     }`}
                     onClick={() => setActive("blogs")}
                   >
-                    Blogs
+                    Eventos
                   </li>
                 </Link>
 
@@ -54,7 +54,7 @@ const Header = ({ active, setActive, user, handleLogout }) => {
                     }`}
                     onClick={() => setActive("create")}
                   >
-                    Create
+                    Nueva publicación
                   </li>
                 </Link>
 
@@ -65,7 +65,7 @@ const Header = ({ active, setActive, user, handleLogout }) => {
                     }`}
                     onClick={() => setActive("about")}
                   >
-                    About
+                    Acerca
                   </li>
                 </Link>
               </ul>
@@ -89,7 +89,7 @@ const Header = ({ active, setActive, user, handleLogout }) => {
                         {user?.displayName}
                       </p>
                       <li className="nav-item nav-link" onClick={handleLogout}>
-                        Logout
+                        Cerrar sesión
                       </li>
                     </>
                   ) : (
@@ -100,7 +100,7 @@ const Header = ({ active, setActive, user, handleLogout }) => {
                         }`}
                         onClick={() => setActive("login")}
                       >
-                        Login
+                        Iniciar sesión
                       </li>
                     </Link>
                   )}

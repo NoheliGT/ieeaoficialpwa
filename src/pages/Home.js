@@ -161,11 +161,11 @@ const Home = ({ setActive, user, active }) => {
   }
 
   const handleDelete = async (id) => {
-    if (window.confirm("Are you sure wanted to delete that blog ?")) {
+    if (window.confirm("¿Estas seguro de eliminar esta publicación?")) {
       try {
         setLoading(true);
         await deleteDoc(doc(db, "blogs", id));
-        toast.success("Blog deleted successfully");
+        toast.success("¡Publicación eliminada correctamente!");
         setLoading(false);
       } catch (err) {
         console.log(err);
@@ -209,11 +209,11 @@ const Home = ({ setActive, user, active }) => {
         <div className="row mx-0">
           <Trending blogs={trendBlogs} />
           <div className="col-md-8">
-            <div className="blog-heading text-start py-2 mb-4">Daily Blogs</div>
+            <div className="blog-heading text-start py-2 mb-4">Publicaciones recientes</div>
             {blogs.length === 0 && location.pathname !== "/" && (
               <>
                 <h4>
-                  No Blog found with search keyword:{" "}
+                  ¡No hay publicaciones relacionadas con esta palabra! :{" "}
                   <strong>{searchQuery}</strong>
                 </h4>
               </>
@@ -229,15 +229,15 @@ const Home = ({ setActive, user, active }) => {
 
             {!hide && (
               <button className="btn btn-primary" onClick={fetchMore}>
-                Load More
+                Ver más
               </button>
             )}
           </div>
           <div className="col-md-3">
             <Search search={search} handleChange={handleChange} />
-            <div className="blog-heading text-start py-2 mb-4">Tags</div>
+            <div className="blog-heading text-start py-2 mb-4">Etiquetas</div>
             <Tags tags={tags} />
-            <FeatureBlogs title={"Most Popular"} blogs={blogs} />
+            <FeatureBlogs title={"Más popular"} blogs={blogs} />
             <Category catgBlogsCount={categoryCount} />
           </div>
         </div>
