@@ -5,7 +5,7 @@ import BlogSection from "../components/BlogSection";
 import Spinner from "../components/Spinner";
 import { db } from "../firebase";
 
-const CategoryBlog = ({ setActive }) => {
+const Categoria = ({ setActive }) => {
   const [categoryBlogs, setCategoryBlogs] = useState([]);
   const [loading, setLoading] = useState(false);
   const { category } = useParams();
@@ -50,4 +50,4 @@ const CategoryBlog = ({ setActive }) => {
   );
 };
 
-export default CategoryBlog;
+export default Categoria;

@@ -17,7 +17,7 @@ import Pagination from "../components/Pagination";
 import Spinner from "../components/Spinner";
 import { db } from "../firebase";
 
-const Blogs = ({setActive}) => {
+const Publicacion = ({setActive}) => {
   const [loading, setLoading] = useState(false);
   const [blogs, setBlogs] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -122,4 +122,4 @@ const Blogs = ({setActive}) => {
   );
 };
 
-export default Blogs;
+export default Publicacion;

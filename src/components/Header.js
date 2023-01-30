@@ -39,9 +39,9 @@ const Header = ({ active, setActive, user, handleLogout }) => {
                 <Link to="/" style={{ textDecoration: "none" }}>
                   <li
                     className={`nav-item nav-link ${
-                      active === "home" ? "active" : ""
+                      active === "principal" ? "active" : ""
                     }`}
-                    onClick={() => setActive("home")}
+                    onClick={() => setActive("principal")}
                   >
                     Inicio
                   </li>
@@ -76,12 +76,12 @@ const Header = ({ active, setActive, user, handleLogout }) => {
                     Eventos
                   </li>
                 </Link>
-                <Link to="/about" style={{ textDecoration: "none" }}>
+                <Link to="/acerca" style={{ textDecoration: "none" }}>
                   <li
                     className={`nav-item nav-link ${
-                      active === "about" ? "active" : ""
+                      active === "acerca" ? "active" : ""
                     }`}
-                    onClick={() => setActive("about")}
+                    onClick={() => setActive("acerca")}
                   >
                     Acerca
                   </li>

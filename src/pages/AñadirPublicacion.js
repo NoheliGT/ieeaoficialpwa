@@ -32,7 +32,7 @@ const categoryOption = [
   "Trabajo",
 ];
 
-const AddEditBlog = ({ user, setActive }) => {
+const AñadirPublicacion = ({ user, setActive }) => {
   const [form, setForm] = useState(initialState);
   const [file, setFile] = useState(null);
   const [progress, setProgress] = useState(null);
@@ -247,4 +247,4 @@ const AddEditBlog = ({ user, setActive }) => {
   );
 };
 
-export default AddEditBlog;
+export default AñadirPublicacion;

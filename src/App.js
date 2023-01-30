@@ -2,27 +2,27 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import "./style.scss";
 import "./media-query.css";
-import Home from "./pages/Home";
+import Principal from "./pages/Principal";
 import { Routes, Route, useNavigate, Navigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Detail from "./pages/Detail";
-import AddEditBlog from "./pages/AddEditBlog";
-import About from "./pages/About";
+import AñadirPublicacion from "./pages/AñadirPublicacion";
+import Acerca from "./pages/Acerca";
 import Conocenos from "./pages/Conocenos";
 import Ofertaeducativa from "./pages/Ofertaeducativa";
-import NotFound from "./pages/NotFound";
+import Error from "./pages/Error";
 import Header from "./components/Header";
 import Auth from "./pages/Auth";
 import { auth } from "./firebase";
 import { signOut } from "firebase/auth";
 import TagBlog from "./pages/TagBlog";
-import CategoryBlog from "./pages/CategoryBlog";
+import Categoria from "./pages/Categoria";
 import ScrollToTop from "./components/ScrollToTop";
-import Blogs from "./pages/Blogs";
+import Publicacion from "./pages/Publicacion";
 
 function App() {
-  const [active, setActive] = useState("home");
+  const [active, setActive] = useState("principal");
   const [user, setUser] = useState(null);
 
   const navigate = useNavigate();
@@ -58,11 +58,11 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<Home setActive={setActive} active={active} user={user} />}
+          element={<Principal setActive={setActive} active={active} user={user} />}
         />
         <Route
           path="/search"
-          element={<Home setActive={setActive} user={user} />}
+          element={<Principal setActive={setActive} user={user} />}
         />
         <Route
           path="/detail/:id"
@@ -71,14 +71,14 @@ function App() {
         <Route
           path="/create"
           element={
-            user?.uid ? <AddEditBlog user={user} /> : <Navigate to="/" />
+            user?.uid ? <AñadirPublicacion user={user} /> : <Navigate to="/" />
           }
         />
         <Route
           path="/update/:id"
           element={
             user?.uid ? (
-              <AddEditBlog user={user} setActive={setActive} />
+              <AñadirPublicacion user={user} setActive={setActive} />
             ) : (
               <Navigate to="/" />
             )
@@ -86,15 +86,15 @@ function App() {
         />
         <Route path="/conocenos" element={<Conocenos />} />
         <Route path="/ofertaeducativa" element={<Ofertaeducativa />} />
-        <Route path="/blogs" element={<Blogs setActive={setActive} />} />
+        <Route path="/blogs" element={<Publicacion setActive={setActive} />} />
         <Route path="/tag/:tag" element={<TagBlog setActive={setActive} />} />
-        <Route path="/category/:category" element={<CategoryBlog setActive={setActive}  />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/category/:category" element={<Categoria setActive={setActive}  />} />
+        <Route path="/acerca" element={<Acerca />} />
         <Route
           path="/auth"
           element={<Auth setActive={setActive} setUser={setUser} />}
         />
-        <Route path="*" element={<NotFound />} />
+        <Route path="*" element={<Error />} />
       </Routes>
     </div>
   );

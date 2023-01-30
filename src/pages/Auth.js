@@ -38,7 +38,7 @@ const Auth = ({ setActive, setUser }) => {
           password
         );
         setUser(user);
-        setActive("home");
+        setActive("principal");
       } else {
         return toast.error("All fields are mandatory to fill");
       }
@@ -53,7 +53,7 @@ const Auth = ({ setActive, setUser }) => {
           password
         );
         await updateProfile(user, { displayName: `${firstName} ${lastName}` });
-        setActive("home");
+        setActive("principal");
       } else {
         return toast.error("All fields are mandatory to fill");
       }

@@ -1,6 +1,6 @@
 import React from "react";
 
-const About = () => {
+const Acerca = () => {
   return (
     <div className="container padding">
       <div className="col-md-12">
@@ -14,4 +14,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Acerca;

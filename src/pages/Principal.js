@@ -27,7 +27,7 @@ function useQuery() {
   return new URLSearchParams(useLocation().search);
 }
 
-const Home = ({ setActive, user, active }) => {
+const Principal = ({ setActive, user, active }) => {
   const [loading, setLoading] = useState(true);
   const [blogs, setBlogs] = useState([]);
   const [tags, setTags] = useState([]);
@@ -246,4 +246,4 @@ const Home = ({ setActive, user, active }) => {
   );
 };
 
-export default Home;
+export default Principal;

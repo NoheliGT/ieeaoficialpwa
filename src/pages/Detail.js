@@ -154,11 +154,11 @@ const Detail = ({ setActive, user }) => {
               <br />
               <div className="custombox">
                 <div className="scroll">
-                  <h4 className="small-title">{comments?.length} Comment</h4>
+                  <h4 className="small-title">{comments?.length} Comentario</h4>
                   {isEmpty(comments) ? (
                     <UserComments
                       msg={
-                        "No Comment yet posted on this blog. Be the first to comment"
+                        "Ningún comentario aún publicado en este publicación. Sé el primero en comentar..."
                       }
                     />
                   ) : (
@@ -178,9 +178,9 @@ const Detail = ({ setActive, user }) => {
               />
             </div>
             <div className="col-md-3">
-              <div className="blog-heading text-start py-2 mb-4">Tags</div>
+              <div className="blog-heading text-start py-2 mb-4">Etiquetas</div>
               <Tags tags={tags} />
-              <FeatureBlogs title={"Recent Blogs"} blogs={blogs} />
+              <FeatureBlogs title={"Publicaciones recientes"} blogs={blogs} />
             </div>
           </div>
           <RelatedBlog id={id} blogs={relatedBlogs} />
