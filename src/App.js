@@ -9,6 +9,8 @@ import "react-toastify/dist/ReactToastify.css";
 import Detail from "./pages/Detail";
 import AddEditBlog from "./pages/AddEditBlog";
 import About from "./pages/About";
+import Conocenos from "./pages/Conocenos";
+import Ofertaeducativa from "./pages/Ofertaeducativa";
 import NotFound from "./pages/NotFound";
 import Header from "./components/Header";
 import Auth from "./pages/Auth";
@@ -82,6 +84,8 @@ function App() {
             )
           }
         />
+        <Route path="/conocenos" element={<Conocenos />} />
+        <Route path="/ofertaeducativa" element={<Ofertaeducativa />} />
         <Route path="/blogs" element={<Blogs setActive={setActive} />} />
         <Route path="/tag/:tag" element={<TagBlog setActive={setActive} />} />
         <Route path="/category/:category" element={<CategoryBlog setActive={setActive}  />} />

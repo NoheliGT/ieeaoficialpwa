@@ -25,6 +25,16 @@ const Header = ({ active, setActive, user, handleLogout }) => {
               className="collapse navbar-collapse"
               id="navbarSupportedContent"
             >
+              <img
+                          src="https://telegra.ph/file/6f9f0a9d3bf3c2dd05484.png"
+                          alt="logo"
+                          style={{
+                            width: "100px",
+                            height: "100px",
+                            marginTop: "4px",
+                            marginLeft: "-25px"
+                          }}
+                        />
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <Link to="/" style={{ textDecoration: "none" }}>
                   <li
@@ -34,6 +44,26 @@ const Header = ({ active, setActive, user, handleLogout }) => {
                     onClick={() => setActive("home")}
                   >
                     Inicio
+                  </li>
+                </Link>
+                <Link to="/conocenos" style={{ textDecoration: "none" }}>
+                  <li
+                    className={`nav-item nav-link ${
+                      active === "conocenos" ? "active" : ""
+                    }`}
+                    onClick={() => setActive("conocenos")}
+                  >
+                    Conócenos
+                  </li>
+                </Link>
+                <Link to="/ofertaeducativa" style={{ textDecoration: "none" }}>
+                  <li
+                    className={`nav-item nav-link ${
+                      active === "ofertaeducativa" ? "active" : ""
+                    }`}
+                    onClick={() => setActive("ofertaeducativa")}
+                  >
+                    Oferta educativa
                   </li>
                 </Link>
                 <Link to="/blogs" style={{ textDecoration: "none" }}>
@@ -46,18 +76,6 @@ const Header = ({ active, setActive, user, handleLogout }) => {
                     Eventos
                   </li>
                 </Link>
-
-                <Link to="/create" style={{ textDecoration: "none" }}>
-                  <li
-                    className={`nav-item nav-link ${
-                      active === "create" ? "active" : ""
-                    }`}
-                    onClick={() => setActive("create")}
-                  >
-                    Nueva publicación
-                  </li>
-                </Link>
-
                 <Link to="/about" style={{ textDecoration: "none" }}>
                   <li
                     className={`nav-item nav-link ${
@@ -88,6 +106,16 @@ const Header = ({ active, setActive, user, handleLogout }) => {
                       <p style={{ marginTop: "12px", marginLeft: "5px" }}>
                         {user?.displayName}
                       </p>
+                      <Link to="/create" style={{ textDecoration: "none" }}>
+                  <li
+                    className={`nav-item nav-link ${
+                      active === "create" ? "active" : ""
+                    }`}
+                    onClick={() => setActive("create")}
+                  >
+                    Nueva publicación
+                  </li>
+                </Link>
                       <li className="nav-item nav-link" onClick={handleLogout}>
                         Cerrar sesión
                       </li>

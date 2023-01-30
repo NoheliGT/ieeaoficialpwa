@@ -66,7 +66,7 @@ const Auth = ({ setActive, setUser }) => {
       <div className="container">
         <div className="col-12 text-center">
           <div className="text-center heading py-2">
-            {!signUp ? "Sign-In" : "Sign-Up"}
+            {!signUp ? "Iniciar seción" : "Registrarse"}
           </div>
         </div>
         <div className="row h-100 justify-content-center align-items-center">
@@ -78,7 +78,7 @@ const Auth = ({ setActive, setUser }) => {
                     <input
                       type="text"
                       className="form-control input-text-box"
-                      placeholder="First Name"
+                      placeholder="Nombre"
                       name="firstName"
                       value={firstName}
                       onChange={handleChange}
@@ -88,7 +88,7 @@ const Auth = ({ setActive, setUser }) => {
                     <input
                       type="text"
                       className="form-control input-text-box"
-                      placeholder="Last Name"
+                      placeholder="Apellido"
                       name="lastName"
                       value={lastName}
                       onChange={handleChange}
@@ -100,7 +100,7 @@ const Auth = ({ setActive, setUser }) => {
                 <input
                   type="email"
                   className="form-control input-text-box"
-                  placeholder="Email"
+                  placeholder="Correo"
                   name="email"
                   value={email}
                   onChange={handleChange}
@@ -110,7 +110,7 @@ const Auth = ({ setActive, setUser }) => {
                 <input
                   type="password"
                   className="form-control input-text-box"
-                  placeholder="Password"
+                  placeholder="Contraseña"
                   name="password"
                   value={password}
                   onChange={handleChange}
@@ -121,7 +121,7 @@ const Auth = ({ setActive, setUser }) => {
                   <input
                     type="password"
                     className="form-control input-text-box"
-                    placeholder="Confirm Password"
+                    placeholder="Confirmar contraseña"
                     name="confirmPassword"
                     value={confirmPassword}
                     onChange={handleChange}
@@ -134,7 +134,7 @@ const Auth = ({ setActive, setUser }) => {
                   className={`btn ${!signUp ? "btn-sign-in" : "btn-sign-up"}`}
                   type="submit"
                 >
-                  {!signUp ? "Sign-in" : "Sign-up"}
+                  {!signUp ? "Iniciar" : "Registrarse"}
                 </button>
               </div>
             </form>
@@ -143,13 +143,13 @@ const Auth = ({ setActive, setUser }) => {
                 <>
                   <div className="text-center justify-content-center mt-2 pt-2">
                     <p className="small fw-bold mt-2 pt-1 mb-0">
-                      Don't have an account ?&nbsp;
+                      ¿No tienes una cuenta ?&nbsp;
                       <span
                         className="link-danger"
                         style={{ textDecoration: "none", cursor: "pointer" }}
                         onClick={() => setSignUp(true)}
                       >
-                        Sign Up
+                        Registrate
                       </span>
                     </p>
                   </div>
@@ -158,7 +158,7 @@ const Auth = ({ setActive, setUser }) => {
                 <>
                   <div className="text-center justify-content-center mt-2 pt-2">
                     <p className="small fw-bold mt-2 pt-1 mb-0">
-                      Already have an account ?&nbsp;
+                      ¿Ya tienes una cuenta ?&nbsp;
                       <span
                         style={{
                           textDecoration: "none",
@@ -167,7 +167,7 @@ const Auth = ({ setActive, setUser }) => {
                         }}
                         onClick={() => setSignUp(false)}
                       >
-                        Sign In
+                        Iniciar sesión
                       </span>
                     </p>
                   </div>
