@@ -1,7 +1,10 @@
 import React from "react";
 
 const Ofertaeducativa = () => {
+  
   return (
+
+
     <div className="container padding">
       <div className="col-md-12">
         <div className="row mx-0">
@@ -11,7 +14,11 @@ const Ofertaeducativa = () => {
         </div>
       </div>
     </div>
+
+    
+    
   );
+  
 };
 
 export default Ofertaeducativa;

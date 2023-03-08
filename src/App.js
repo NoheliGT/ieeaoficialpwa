@@ -21,6 +21,7 @@ import Categoria from "./pages/Categoria";
 import ScrollToTop from "./components/ScrollToTop";
 import Publicacion from "./pages/Publicacion";
 
+
 function App() {
   const [active, setActive] = useState("principal");
   const [user, setUser] = useState(null);

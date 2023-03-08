@@ -68,7 +68,7 @@ const Principal = ({ setActive, user, active }) => {
         setTotalBlogs(list);
         // setBlogs(list);
         setLoading(false);
-        setActive("home");
+        setActive("principal");
       },
       (error) => {
         console.log(error);
