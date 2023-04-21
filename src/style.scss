@@ -342,11 +342,13 @@ $yellow:#f5bc04;
 		}
 
         h2 {
-            color: white;
-			font-weight: 300;
-            .single & {
-				font-size: 72px;
-			}
+            @font-face {
+				font-family: 'Poppins-Regular';
+				src: url('../public/fonts/Poppins-Regular.ttf') format('truetype');
+			  }
+			font-weight: 700;
+			font-size: 20px;
+			color: #ffffff;
         }
 
         > span {
@@ -675,9 +677,9 @@ $yellow:#f5bc04;
 // Pagination
 .btn_mange_pagging {
 	background: #7d0012;
-	padding: 12px 20px;
+	padding: 12px;
 	color: #fff!important;
-	margin: 0 10px;
+	margin: 10px 5px;
 	border-radius: 10px;
 
 	@include transition(0.5s);
@@ -814,7 +816,7 @@ $yellow:#f5bc04;
 	padding: 17px 0;
 	color: #000;
 	width: 100%;
-	font-size: 14px;
+	font-size: 12px;
 	letter-spacing: 0.8px;
 	font-weight: 700;
 	position: relative;
@@ -913,6 +915,7 @@ $yellow:#f5bc04;
 	align-items: center;
 	margin-left: 15%;
 	
+	
   }
   
   .formulario-rojo label {
@@ -924,8 +927,9 @@ $yellow:#f5bc04;
   .formulario-rojo input[type="email"] {
 	border: 2px solid #7d0012;
 	border-radius: 5px;
-	padding: 5px;
-	margin-bottom: 10px;
+	padding: 3px;
+	margin-bottom: 7px;
+	width: 100%;
   }
   
   .formulario-rojo input[type="text"]:focus,
@@ -958,18 +962,30 @@ $yellow:#f5bc04;
 	border: 2px solid #7d0012;
 	border-radius: 5px;
   }
-  .footer {
-	background-color: #f2f2f2;
-	padding: 20px 0 0 0;
+  footer {
+	background-color: #f5f5f5;
+	padding: 20px;
 	text-align: center;
   }
   
+  @media (min-width: 768px) {
+	footer {
+	  padding: 40px;
+	}
+  }
+  
   .footer-container {
-	max-width: 1000px;
 	margin: 0 auto;
 	display: flex;
 	justify-content: space-between;
+	width: auto;
   }
+  @media (max-width: 768px) {
+	.footer-container {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+}
   
   .contact, .social {
 	width: 45%;

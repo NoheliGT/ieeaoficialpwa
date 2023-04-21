@@ -29,8 +29,9 @@ const CommentBox = ({ userId, userComment, setUserComment, handleComment }) => {
             className="btn btn-danger"
             type="submit"
             onClick={handleComment}
+            style={{fontWeight: "bold", fontSize: 12}}
           >
-            Publicar comentario
+            PUBLICAR COMENTARIO
           </button>
         </>
       )}

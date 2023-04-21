@@ -10,8 +10,8 @@ const RelatedBlog = ({ blogs, id }) => {
       <div className="col-md-12 text-left justify-content-center">
         <div className="row gx-5">
           {blogs.length === 1 && (
-            <h5 className="text-center">
-              Publicaciones relacionadas no encontrados con este publicación actual
+            <h5 className="text-center" style={{fontSize: 10}}>
+              NO HAY PUBLICACIONES RELACIONADAS CON LA ACTUAL
             </h5>
           )}
           {blogs

@@ -92,12 +92,6 @@ function Conocenos() {
       cargo: 'Responsable de Informática',
       email: 'cam_inforcz06@inea.gob.mx',
       telefono: '982 82 6 02 82'
-    },
-    {
-      nombre: 'Carlos Hernández',
-      cargo: 'CMO',
-      email: 'carlos.hernandez@miempresa.com',
-      telefono: '982 82 6 02 82'
     }
   ];
   
