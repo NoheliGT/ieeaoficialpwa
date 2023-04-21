@@ -10,7 +10,7 @@ import {
   where,
   startAfter,
 } from "firebase/firestore";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Component } from "react";
 import BlogSection from "../components/BlogSection";
 import Spinner from "../components/Spinner";
 import { db } from "../firebase";
@@ -22,10 +22,26 @@ import Search from "../components/Search";
 import { isEmpty, isNull } from "lodash";
 import { useLocation } from "react-router-dom";
 import Category from "../components/Category";
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import "leaflet/dist/leaflet.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebook, faTwitter, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import icono from '../assets/img/location.svg';
+import L from 'leaflet'; // Importar Leaflet
+
+
+const icon = L.icon({
+  iconUrl: icono,
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+});
+
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
+  
 }
+const position = [18.185320, -91.045510]; // Coordenadas de Campeche, México
 
 const Principal = ({ setActive, user, active }) => {
   const [loading, setLoading] = useState(true);
@@ -107,7 +123,7 @@ const Principal = ({ setActive, user, active }) => {
       setBlogs((blogs) => [...blogs, ...blogsData]);
       setLastVisible(docSnapshot.docs[docSnapshot.docs.length - 1]);
     } else {
-      toast.info("No more blog to display");
+      toast.info("No hay más publicaciones para mostrar");
       setHide(true);
     }
   };
@@ -165,7 +181,7 @@ const Principal = ({ setActive, user, active }) => {
       try {
         setLoading(true);
         await deleteDoc(doc(db, "blogs", id));
-        toast.success("¡Publicación eliminada correctamente!");
+        toast.success("Publicación eliminada correctamente");
         setLoading(false);
       } catch (err) {
         console.log(err);
@@ -209,7 +225,7 @@ const Principal = ({ setActive, user, active }) => {
         <div className="row mx-0">
           <Trending blogs={trendBlogs} />
           <div className="col-md-8">
-            <div className="blog-heading text-start py-2 mb-4">Publicaciones recientes</div>
+            <div className="blog-heading text-start py-2 mb-4">PUBLICACIONES RECIENTES</div>
             {blogs.length === 0 && location.pathname !== "/" && (
               <>
                 <h4>
@@ -228,21 +244,64 @@ const Principal = ({ setActive, user, active }) => {
             ))}
 
             {!hide && (
-              <button className="btn btn-primary" onClick={fetchMore}>
+              <button className="btn btn-danger" style={{fontWeight: "bold"}} onClick={fetchMore}>
                 Ver más
               </button>
             )}
           </div>
           <div className="col-md-3">
             <Search search={search} handleChange={handleChange} />
-            <div className="blog-heading text-start py-2 mb-4">Etiquetas</div>
+            <div className="blog-heading text-start py-2 mb-4">ETIQUETAS</div>
             <Tags tags={tags} />
-            <FeatureBlogs title={"Más popular"} blogs={blogs} />
+            <FeatureBlogs title={"MÁS POPULAR"} blogs={blogs} />
             <Category catgBlogsCount={categoryCount} />
           </div>
         </div>
       </div>
+    <footer className="footer">
+      <div className="footer-container">
+        <div className="contact">
+          <h4><b>CONTACTO</b></h4>
+          <p> <b>Dirección:</b> Calle 16 Sin Número esquina con Calle 19, Colonia Centro C.P. 24330 Altos Banco Azteca.</p>
+          <p><b>Teléfono:</b> 982 82 6 02 82</p>
+          <p><b>Correo electrónico:</b> cz_candelaria@inea.gob.mx</p>
+        </div>
+        <div className="social">
+          <h4><b>REDES SOCIALES</b></h4>
+          <div className="social-links">
+            <a href="https://www.facebook.com/profile.php?id=100082960767721&mibextid=ZbWKwL"><FontAwesomeIcon icon={faFacebook} /></a>
+            <a href="https://twitter.com/"><FontAwesomeIcon icon={faTwitter} /></a>
+            <a href="hhttps://wa.me/529983674522?text=Estoy+interesado+en+formar+parte+del+IEEA.+%C2%BFPodria+brindarme+mas+informaci%C3%B3n+al+respecto%3F"><FontAwesomeIcon icon={faWhatsapp} /></a>
+          </div>
+        </div>
+        <MapContainer
+      center={position}
+      zoom={15}
+      style={{ height: "200px", width: "100%" }}
+    >
+      <TileLayer
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        attribution='&copy; <a href="https://www.facebook.com/profile.php?id=100082960767721&mibextid=ZbWKwL">IEEA 06 CANDELARIA</a>'
+      />
+      
+      <Marker position={position} icon={icon}>
+      <Popup>
+        A pretty CSS3 popup. <br /> Easily customizable.
+      </Popup>
+    </Marker>
+      <div
+        style={{
+          marginTop: "30px",
+          marginBottom: "50px",
+          marginLeft: "50px",
+          marginRight: "50px",
+        }}
+      ></div>
+    </MapContainer>
+      </div>
+    </footer>
     </div>
+     
   );
 };
 

@@ -17,15 +17,16 @@ const CommentBox = ({ userId, userComment, setUserComment, handleComment }) => {
       </form>
       {!userId ? (
         <>
-          <h5>Inicie sesión o cree una cuenta para publicar un comentario</h5>
-          <button className="btn btn-success" onClick={() => navigate("/auth")}>
-            Iniciar Sesión
+          <h5>INICIE SESIÓN PARA PUBLICAR UN COMENTARIO EXTRA</h5>
+          <br></br>
+          <button className="btn btn-danger" onClick={() => navigate("/auth")}>
+            INICIAR SESIÓN
           </button>
         </>
       ) : (
         <>
           <button
-            className="btn btn-primary"
+            className="btn btn-danger"
             type="submit"
             onClick={handleComment}
           >

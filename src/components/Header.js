@@ -43,7 +43,7 @@ const Header = ({ active, setActive, user, handleLogout }) => {
                     }`}
                     onClick={() => setActive("principal")}
                   >
-                    Inicio
+                    INICIO
                   </li>
                 </Link>
                 <Link to="/conocenos" style={{ textDecoration: "none" }}>
@@ -53,7 +53,7 @@ const Header = ({ active, setActive, user, handleLogout }) => {
                     }`}
                     onClick={() => setActive("conocenos")}
                   >
-                    Conócenos
+                    CONOCENOS
                   </li>
                 </Link>
                 <Link to="/ofertaeducativa" style={{ textDecoration: "none" }}>
@@ -63,7 +63,7 @@ const Header = ({ active, setActive, user, handleLogout }) => {
                     }`}
                     onClick={() => setActive("ofertaeducativa")}
                   >
-                    Oferta educativa
+                    OFERTA EDUCATIVA
                   </li>
                 </Link>
                 <Link to="/blogs" style={{ textDecoration: "none" }}>
@@ -73,17 +73,7 @@ const Header = ({ active, setActive, user, handleLogout }) => {
                     }`}
                     onClick={() => setActive("blogs")}
                   >
-                    Eventos
-                  </li>
-                </Link>
-                <Link to="/acerca" style={{ textDecoration: "none" }}>
-                  <li
-                    className={`nav-item nav-link ${
-                      active === "acerca" ? "active" : ""
-                    }`}
-                    onClick={() => setActive("acerca")}
-                  >
-                    Acerca
+                    EVENTOS
                   </li>
                 </Link>
               </ul>
@@ -113,11 +103,11 @@ const Header = ({ active, setActive, user, handleLogout }) => {
                     }`}
                     onClick={() => setActive("create")}
                   >
-                    Nueva publicación
+                    NUEVA PUBLICACIÓN
                   </li>
                 </Link>
                       <li className="nav-item nav-link" onClick={handleLogout}>
-                        Cerrar sesión
+                        CERRAR SESIÓN
                       </li>
                     </>
                   ) : (
@@ -128,7 +118,7 @@ const Header = ({ active, setActive, user, handleLogout }) => {
                         }`}
                         onClick={() => setActive("login")}
                       >
-                        Iniciar sesión
+                        INICIAR SESIÓN
                       </li>
                     </Link>
                   )}

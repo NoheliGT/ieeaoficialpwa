@@ -15,7 +15,7 @@ const Search = ({ search, handleChange }) => {
 
   return (
     <div>
-      <div className="blog-heading text-start py-2 mb-4">Buscar</div>
+      <div className="blog-heading text-start py-2 mb-4">BUSCAR</div>
       <form className="form-inline" onSubmit={handleSubmit}>
         <div className="col-12 py-3">
           <input
@@ -26,7 +26,7 @@ const Search = ({ search, handleChange }) => {
             onChange={handleChange}
           />
         </div>
-        <button className="btn btn-secondary search-btn">
+        <button className="btn btn-danger search-btn">
           <i className="fa fa-search" />
         </button>
       </form>

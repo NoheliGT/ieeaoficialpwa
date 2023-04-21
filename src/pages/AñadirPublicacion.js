@@ -70,7 +70,7 @@ const AñadirPublicacion = ({ user, setActive }) => {
         },
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then((downloadUrl) => {
-            toast.info("¡Imagen cargada correctamente!");
+            toast.info("Imagen cargada correctamente");
             setForm((prev) => ({ ...prev, imgUrl: downloadUrl }));
           });
         }
@@ -121,7 +121,7 @@ const AñadirPublicacion = ({ user, setActive }) => {
             author: user.displayName,
             userId: user.uid,
           });
-          toast.success("¡Nueva publicación creada!");
+          toast.success("Nueva publicación creada");
         } catch (err) {
           console.log(err);
         }
@@ -133,13 +133,13 @@ const AñadirPublicacion = ({ user, setActive }) => {
             author: user.displayName,
             userId: user.uid,
           });
-          toast.success("¡Publicación actualizada!");
+          toast.success("Publicación actualizada");
         } catch (err) {
           console.log(err);
         }
       }
     } else {
-      return toast.error("All fields are mandatory to fill");
+      return toast.error("Debe llenar los campos");
     }
 
     navigate("/");
@@ -150,7 +150,7 @@ const AñadirPublicacion = ({ user, setActive }) => {
       <div className="container">
         <div className="col-12">
           <div className="text-center heading py-2">
-            {id ? "Actualizar publicación" : "Nueva publicación"}
+            {id ? "Actualizar publicación" : "NUEVA PUBLICACIÓN"}
           </div>
         </div>
         <div className="row h-100 justify-content-center align-items-center">

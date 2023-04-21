@@ -16,19 +16,19 @@ const Like = ({ handleLike, likes, userId }) => {
       return likes.find((id) => id === userId) ? (
         <>
           <i className="bi bi-hand-thumbs-up-fill" />
-          &nbsp;{likes.length} {likes.length === 1 ? "Like" : "Likes"}
+          &nbsp;{likes.length} {likes.length === 1 ? "Me gusta" : "Me gusta"}
         </>
       ) : (
         <>
           <i className="bi bi-hand-thumbs-up" />
-          &nbsp;{likes.length} {likes.length === 1 ? "Like" : "Likes"}
+          &nbsp;{likes.length} {likes.length === 1 ? "Me gusta" : "Me gusta"}
         </>
       );
     }
     return (
       <>
         <i className="bi bi-hand-thumbs-up" />
-        &nbsp;Like
+        &nbsp;Me gusta
       </>
     );
   };
@@ -44,7 +44,7 @@ const Like = ({ handleLike, likes, userId }) => {
             className="btn btn-primary"
             data-bs-toggle="tooltip"
             data-bs-placement="top"
-            title="Please Login to like post"
+            title="Inicia sesión para reaccionar"
           >
             <LikeStatus />
           </button>

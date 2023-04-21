@@ -95,7 +95,7 @@ const Detail = ({ setActive, user }) => {
       name: user?.displayName,
       body: userComment,
     });
-    toast.success("Comment posted successfully");
+    toast.success("Comentario publicado");
     await updateDoc(doc(db, "blogs", id), {
       ...blog,
       comments,
@@ -143,7 +143,7 @@ const Detail = ({ setActive, user }) => {
           <div className="row mx-0">
             <div className="col-md-8">
               <span className="meta-info text-start">
-                By <p className="author">{blog?.author}</p> -&nbsp;
+                Por <p className="author">{blog?.author}</p> -&nbsp;
                 {blog?.timestamp.toDate().toDateString()}
                 <Like handleLike={handleLike} likes={likes} userId={userId} />
               </span>
@@ -178,9 +178,9 @@ const Detail = ({ setActive, user }) => {
               />
             </div>
             <div className="col-md-3">
-              <div className="blog-heading text-start py-2 mb-4">Etiquetas</div>
+              <div className="blog-heading text-start py-2 mb-4">ETIQUETAS</div>
               <Tags tags={tags} />
-              <FeatureBlogs title={"Publicaciones recientes"} blogs={blogs} />
+              <FeatureBlogs title={"PUBLICACIONES RECIENTES"} blogs={blogs} />
             </div>
           </div>
           <RelatedBlog id={id} blogs={relatedBlogs} />

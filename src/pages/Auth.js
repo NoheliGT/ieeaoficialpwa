@@ -40,11 +40,11 @@ const Auth = ({ setActive, setUser }) => {
         setUser(user);
         setActive("principal");
       } else {
-        return toast.error("All fields are mandatory to fill");
+        return toast.error("Debe llenar los campos");
       }
     } else {
       if (password !== confirmPassword) {
-        return toast.error("Password don't match");
+        return toast.error("Las contraseñas no coinciden");
       }
       if (firstName && lastName && email && password) {
         const { user } = await createUserWithEmailAndPassword(
@@ -55,7 +55,7 @@ const Auth = ({ setActive, setUser }) => {
         await updateProfile(user, { displayName: `${firstName} ${lastName}` });
         setActive("principal");
       } else {
-        return toast.error("All fields are mandatory to fill");
+        return toast.error("Debe llenar los campos");
       }
     }
     navigate("/");
@@ -66,7 +66,7 @@ const Auth = ({ setActive, setUser }) => {
       <div className="container">
         <div className="col-12 text-center">
           <div className="text-center heading py-2">
-            {!signUp ? "Iniciar seción" : "Registrarse"}
+            {!signUp ? "INICIAR SESIÓN" : "Registrarse"}
           </div>
         </div>
         <div className="row h-100 justify-content-center align-items-center">
@@ -134,7 +134,7 @@ const Auth = ({ setActive, setUser }) => {
                   className={`btn ${!signUp ? "btn-sign-in" : "btn-sign-up"}`}
                   type="submit"
                 >
-                  {!signUp ? "Iniciar" : "Registrarse"}
+                  {!signUp ? "INICIAR SESIÓN" : "Registrarse"}
                 </button>
               </div>
             </form>
@@ -143,13 +143,13 @@ const Auth = ({ setActive, setUser }) => {
                 <>
                   <div className="text-center justify-content-center mt-2 pt-2">
                     <p className="small fw-bold mt-2 pt-1 mb-0">
-                      ¿No tienes una cuenta ?&nbsp;
+                     &nbsp;
                       <span
                         className="link-danger"
                         style={{ textDecoration: "none", cursor: "pointer" }}
                         onClick={() => setSignUp(true)}
                       >
-                        Registrate
+                        
                       </span>
                     </p>
                   </div>
@@ -167,7 +167,7 @@ const Auth = ({ setActive, setUser }) => {
                         }}
                         onClick={() => setSignUp(false)}
                       >
-                        Iniciar sesión
+                        INICIAR SESIÓN
                       </span>
                     </p>
                   </div>
